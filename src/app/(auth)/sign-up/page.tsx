@@ -23,6 +23,11 @@ import { authClient } from "auth/client";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 
+// 💡 ÖNEMLİ NOT:
+// Kodun içindeki t('...') ile başlayan kısımlar, senin dil dosyandan (tr.json) çevirileri çeker.
+// Örneğin, t('Auth.SignUp.title') -> tr.json dosyasındaki "Hesap Oluştur" metnini getirir.
+// Bu, çok dilli siteler için en doğru yöntemdir.
+
 export default function SignUpPage() {
   const t = useTranslations();
   const [step, setStep] = useState(1);
@@ -116,7 +121,7 @@ export default function SignUpPage() {
           <CardDescription className="py-12">
             <div className="flex flex-col gap-2">
               <p className="text-xs text-muted-foreground text-right">
-                Step {step} of {steps.length}
+                İlerleme {step} / {steps.length}
               </p>
               <div className="h-2 w-full relative bg-input">
                 <div
@@ -133,11 +138,11 @@ export default function SignUpPage() {
           <div className="flex flex-col gap-2">
             {step === 1 && (
               <div className={cn("flex flex-col gap-2")}>
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">Mail Adresiniz</Label>
                 <Input
                   id="email"
                   type="email"
-                  placeholder="mcp@example.com"
+                  placeholder="ornek@eposta.com"
                   disabled={isLoading}
                   autoFocus
                   value={formData.email}
@@ -156,11 +161,11 @@ export default function SignUpPage() {
             )}
             {step === 2 && (
               <div className={cn("flex flex-col gap-2")}>
-                <Label htmlFor="name">Full Name</Label>
+                <Label htmlFor="name">Adınız</Label>
                 <Input
                   id="name"
                   type="text"
-                  placeholder="Cgoing"
+                  placeholder="Adınız"
                   disabled={isLoading}
                   autoFocus
                   value={formData.name}
@@ -180,7 +185,7 @@ export default function SignUpPage() {
             {step === 3 && (
               <div className={cn("flex flex-col gap-2")}>
                 <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password">Şifre</Label>
                 </div>
                 <Input
                   id="password"

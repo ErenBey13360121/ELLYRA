@@ -1,0 +1,9 @@
+{
+	"name": "Node.js",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+	"features": {
+		"ghcr.io/devcontainers-extra/features/prisma:2": {}
+	},
+	// Connect as root instead.
+	"remoteUser": "root"
+}

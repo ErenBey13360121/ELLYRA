@@ -350,7 +350,7 @@ export default function PromptInput({
                     className="rounded-full group data-[state=open]:bg-input! hover:bg-input! mr-1"
                     data-testid="model-selector-button"
                   >
-                    {chatModel?.model ? (
+                    {chatModel?.provider ? (
                       <>
                         {chatModel.provider === "openai" ? (
                           <OpenAIIcon className="size-3 opacity-0 group-data-[state=open]:opacity-100 group-hover:opacity-100" />
@@ -362,16 +362,15 @@ export default function PromptInput({
                           <GeminiIcon className="size-3 opacity-0 group-data-[state=open]:opacity-100 group-hover:opacity-100" />
                         ) : null}
                         <span
-                          className="text-foreground group-data-[state=open]:text-foreground  "
+                          className="text-foreground group-data-[state=open]:text-foreground font-bold text-base md:text-lg"
                           data-testid="selected-model-name"
                         >
-                          {chatModel.model}
+                          {chatModel.provider.toLocaleUpperCase()}
                         </span>
                       </>
                     ) : (
-                      <span className="text-muted-foreground">model</span>
+                      <span className="text-muted-foreground">MODEL</span>
                     )}
-
                     <ChevronDown className="size-3" />
                   </Button>
                 </SelectModel>

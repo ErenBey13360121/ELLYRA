@@ -95,7 +95,7 @@ export default async function ArchivePage({
           <Particles
             className="bg-transparent"
             particleCount={400}
-            particleBaseSize={10}
+            particleBaseSize={1500}
           />
         </div>
         <div className="absolute pointer-events-none top-0 left-0 w-full h-full z-10 fade-in animate-in duration-5000">

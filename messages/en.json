@@ -205,7 +205,7 @@
       "temporaryChatInstructionsPlaceholder": "Talimatlarınızı buraya girin.",
       "temporaryChatInstructionsDescription": "Geçici sohbet için talimatlar belirleyebilirsiniz. Bu, geçici sohbet için bir sistem istemi olarak kullanılacaktır."
     },
-    "placeholder": "Bir şey sorun veya @bahsedin",
+  "placeholder": "Bugün size nasıl yardımcı olabilirim?",
     "Tool": {
       "webSearching": "Web'de Aranıyor...",
       "searchedTheWeb": "Web'de Arama Yapıldı",

@@ -118,6 +118,15 @@ export const UserMessagePart = memo(
     const [expanded, setExpanded] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
     const scrolledRef = useRef(false);
+    const [isThinking, setIsThinking] = useState(false);
+
+    useEffect(() => {
+      if (status === "thinking") {
+        setIsThinking(true);
+      } else {
+        setIsThinking(false);
+      }
+    }, [status]);
 
     const isLongText = part.text.length > MAX_TEXT_LENGTH;
     const displayText =
@@ -163,6 +172,14 @@ export const UserMessagePart = memo(
             setMessages={setMessages}
             sendMessage={sendMessage}
           />
+        </div>
+      );
+    }
+
+    if (isThinking) {
+      return (
+        <div className="flex flex-col gap-2 items-end my-2">
+          <div className="text-muted-foreground text-sm">Bir saniye lütfen...</div>
         </div>
       );
     }
@@ -252,7 +269,7 @@ export const UserMessagePart = memo(
                 </Button>
               </TooltipTrigger>
               <TooltipContent className="text-destructive" side="bottom">
-                Delete Message
+                Mesajı Sil
               </TooltipContent>
             </Tooltip>
           </div>
@@ -373,7 +390,7 @@ export const AssistMessagePart = memo(function AssistMessagePart({
                 {copied ? <Check /> : <Copy />}
               </Button>
             </TooltipTrigger>
-            <TooltipContent>Copy</TooltipContent>
+            <TooltipContent>Kopyala</TooltipContent>
           </Tooltip>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -390,7 +407,7 @@ export const AssistMessagePart = memo(function AssistMessagePart({
                 </SelectModel>
               </div>
             </TooltipTrigger>
-            <TooltipContent>Change Model</TooltipContent>
+            <TooltipContent>Modeli Değiştir</TooltipContent>
           </Tooltip>
           <Tooltip>
             <TooltipTrigger asChild>

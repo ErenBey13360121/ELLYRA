@@ -526,7 +526,7 @@ function CompactMessageView({
 
   return (
     <div className="relative w-full h-full overflow-hidden">
-      <div className="absolute bottom-6 max-h-[80vh] overflow-y-auto left-6 z-10 flex-col gap-2 hidden md:flex">
+    <div className="absolute bottom-6 max-h-[80vh] overflow-y-auto left-6 z-10 flex-col gap-2 hidden md:flex">
         {toolParts.map((toolPart, index) => {
           const isExecuting = toolPart?.state.startsWith("input");
           if (!toolPart) return null;

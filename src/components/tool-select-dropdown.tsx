@@ -615,7 +615,7 @@ function McpServerSelector() {
               variant={"ghost"}
               className="mt-2 text-primary flex items-center gap-1"
             >
-              Add a server <ChevronRight className="size-4" />
+              Server Ekle <ChevronRight className="size-4" />
             </Button>
           </Link>
         </div>

@@ -140,7 +140,7 @@ export class MCPClient {
           token_endpoint_auth_method: "none", // PKCE flow
           scope: "mcp:tools",
           redirect_uris: [`${BASE_URL}/api/mcp/oauth/callback`],
-          software_id: "better-chatbot",
+          software_id: "ELYRA",
           software_version: "1.0.0",
         },
         onRedirectToAuthorization: async (authorizationUrl: URL) => {
